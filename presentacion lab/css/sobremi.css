@@ -1,0 +1,29 @@
+body {
+    background-image: url(img/escudo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed; 
+}
+
+.texto { 
+   
+    width: 700px;
+    height: 550px;
+    margin: 2px;
+text-align:left ;
+    font-family:Arial, Helvetica, sans-serif;
+        font-size: 15px;
+    color:blue;
+ }
+
+ .texto p { 
+    margin: 0px;
+    padding: 0 1rem;
+    vertical-align: middle;
+ }
+
+ .pinga { 
+    color: rgb(255, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+ }

@@ -1,0 +1,30 @@
+header { 
+    color: rgb(181, 142, 34); font-size:120px;
+    text-align: center;
+    text-shadow: 3px 5px 10px rgb(105, 84, 2);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+body {
+    background-image: url(img/real.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+}
+a:link { text-decoration: none;
+    color: rgb(181, 142, 34);}
+a:visited { 
+    color: rgb(181, 142, 34);}
+a:hover { 
+    color: gold;}
+.izquierda {position: fixed;
+    text-align:left;
+    top: 240px; left: 290px; font-size:35px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    
+}
+.derecha { position: fixed;
+    
+    top: 240px; left: 1000px; font-size:35px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
