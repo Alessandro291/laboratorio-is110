@@ -2,7 +2,12 @@ header{
  display:flex;
  justify-content: space-between;
 background-color: blueviolet;
-font-size: 60px;
+font-size: 50px;
 
+
+}
+
+.redes a{
+   padding: 30px;
 
 }
