@@ -1,0 +1,145 @@
+header{
+    display:flex;
+    justify-content: space-between;
+  /* background-color: rgb(255, 81, 0);   
+   */
+   }
+   
+   .redes a{
+      padding: 30px;
+      color: rgb(255, 0, 0);
+      
+   
+   }
+   .redes a:hover{
+    color: rgb(0, 221, 255);
+   }
+.git {
+color: rgb(255, 0, 0);
+}
+.git:hover{
+    color: rgb(0, 221, 255);
+}
+body{
+    background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,181,255,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+.sobremi{
+
+    display: flex;
+    justify-content: space-between;
+    margin: 80px;
+    margin-top: 30px;
+   background-color:transparent;
+   height: 300px;
+   overflow: hidden;
+}
+
+.intro{
+  margin: 30px;
+  margin-left: 140px;
+    width: 400px;
+    height: 250px;
+    background-color: black;
+border-radius: 10%;
+box-shadow: 16px 14px 20px #0000008c;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.intro::before{
+    content: "";
+position: absolute;
+height: 600px;
+width: 600px;
+background-image: conic-gradient(red 20deg, transparent 120deg);
+animation: rotar 2s linear infinite;
+}
+
+@keyframes rotar{
+from{
+    transform:  rotate(0deg);
+}
+to{
+    transform: rotate(360deg);
+}
+}
+
+.intro::after{
+    content:"" ;
+  position: absolute;
+  height: 240px;
+  width: 390px;
+  background-color: #000000;
+  border-radius: 10%;
+  box-shadow: inset 16px 14px 20px #0000008c;
+}
+
+.hola{
+    color: white;
+ z-index: 2;
+ background-color: transparent;
+ text-align: center;
+ font-size: 30px;
+
+}
+
+
+.foto{
+    margin: 30px;
+height: 15rem;
+margin-right: 300px;
+border-radius: 50px;
+}
+
+
+.botones {
+    text-align: center;
+    justify-content: space-evenly;
+   
+}
+
+.but {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color:  red;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 24px;
+    transition: 0.2s;
+
+}
+
+.but:hover{
+    color: #000000;
+    background-color:red;
+    box-shadow: 0 0 10px red, 0 0 40px red, 0 0 80px  red;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
