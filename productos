@@ -1,0 +1,104 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <limits>
+
+using namespace std;
+
+// Estructura para almacenar la información de cada producto
+struct ProductoJL {
+    string nombreJL;
+    int cantidadJL;
+    float precioJL;
+};
+
+// Función para ingresar productos en el inventario
+void ingresarProductosJL(vector<ProductoJL> &inventarioJL, int nJL) {
+    for (int i = 0; i < nJL; ++i) {
+        ProductoJL productoJL;
+        cout << "Nombre: ";
+        cin.ignore(); // Limpiar el buffer de entrada (en caso de que haya un salto de línea pendiente)
+        getline(cin, productoJL.nombreJL); // Usamos getline para permitir espacios en los nombres
+
+        cout << "Cantidad: ";
+        while (!(cin >> productoJL.cantidadJL) || productoJL.cantidadJL < 0) {
+            cout << "Ingrese un número válido para la cantidad: ";
+            cin.clear(); // limpiar el flag de error
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignorar el resto de la línea
+        }
+
+        cout << "Precio: ";
+        while (!(cin >> productoJL.precioJL) || productoJL.precioJL < 0) {
+            cout << "Ingrese un número válido para el precio: ";
+            cin.clear(); // limpiar el flag de error
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignorar el resto de la línea
+        }
+
+        inventarioJL.push_back(productoJL);
+    }
+}
+
+// Función para revisar los productos en el inventario
+void revisarInventarioJL(const vector<ProductoJL> &inventarioJL) {
+    if (inventarioJL.empty()) {
+        cout << "El inventario está vacío.\n";
+        return;
+    }
+    cout << "Inventario:\n";
+    for (int i = 0; i < inventarioJL.size(); ++i) {
+        cout << "Nombre: " << inventarioJL[i].nombreJL 
+             << ", Cantidad: " << inventarioJL[i].cantidadJL 
+             << ", Precio: $" << inventarioJL[i].precioJL << "\n";
+    }
+}
+
+// Función para generar un reporte final del inventario
+void reporteFinalJL(const vector<ProductoJL> &inventarioJL) {
+    if (inventarioJL.empty()) {
+        cout << "El inventario está vacío.\n";
+        return;
+    }
+    int totalCantidadJL = 0;
+    float valorTotalJL = 0.0;
+    for (int i = 0; i < inventarioJL.size(); ++i) {
+        totalCantidadJL += inventarioJL[i].cantidadJL;
+        valorTotalJL += inventarioJL[i].cantidadJL * inventarioJL[i].precioJL;
+    }
+    cout << "Total productos: " << totalCantidadJL << ", Valor total: $" << valorTotalJL << "\n";
+}
+
+int main() {
+    vector<ProductoJL> inventarioJL;
+    int opcionJL, nJL;
+
+    while (true) {
+        cout << "\n--- Menú ---\n";
+        cout << "1. Ingresar productos\n";
+        cout << "2. Revisar inventario\n";
+        cout << "3. Generar reporte\n";
+        cout << "4. Salir\n";
+        cout << "Seleccione una opción: ";
+        cin >> opcionJL;
+
+        if (opcionJL == 1) {
+            cout << "Número de productos a ingresar: ";
+            while (!(cin >> nJL) || nJL <= 0) {
+                cout << "Ingrese un número válido para el número de productos: ";
+                cin.clear(); // limpiar el flag de error
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignorar el resto de la línea
+            }
+            ingresarProductosJL(inventarioJL, nJL);
+        } else if (opcionJL == 2) {
+            revisarInventarioJL(inventarioJL);
+        } else if (opcionJL == 3) {
+            reporteFinalJL(inventarioJL);
+        } else if (opcionJL == 4) {
+            cout << "Saliendo del programa.\n";
+            break;
+        } else {
+            cout << "Opción no válida. Por favor, intente de nuevo.\n";
+        }
+    }
+
+    return 0;
+}
